@@ -1,3 +1,6 @@
 src\manage.py = main code
 src\django_ecommerce = python code
 src\template = pages html
+
+src\django_ecommerce\views.py = context variables
+src\django_ecommerce\urls.py = url setings
