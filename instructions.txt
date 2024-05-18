@@ -1,0 +1,3 @@
+src\manage.py = main code
+src\django_ecommerce = python code
+src\template = pages html
