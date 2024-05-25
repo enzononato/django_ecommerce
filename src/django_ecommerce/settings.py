@@ -80,8 +80,8 @@ DATABASES = {
         'NAME': 'ecommerce_db',
         'USER': 'root',
         'PASSWORD': '1234',
-        'HOST': 'localhost',  # Ou o endereço do servidor MySQL
-        'PORT': '3306',  # O padrão é 3306
+        'HOST': 'localhost',  
+        'PORT': '3306',
     }
 }
 
