@@ -6,8 +6,20 @@
     <title>{{title}}</title>
 </head>
 <body>
-    <h1 class="title">{{content}}</h1>
-    <a href="contact">contato</a><br>
+    <h1 class="title">{{content}}, {{user.username}}</h1>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }}, {{user.email}}!</p>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    {% else %}
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+    {% endif %}
+    {% block content %}{% endblock %}
+    <h4>Mais páginas:</h4>
+    <a href="contact">contato</a>
     <a href="about">sobre</a>
 </body>
 </html>

@@ -4,3 +4,5 @@ src\template = pages html
 
 src\django_ecommerce\views.py = context variables
 src\django_ecommerce\urls.py = url setings
+
+redirect login and logout -> settings.py

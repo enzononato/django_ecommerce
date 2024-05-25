@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,10 @@ ROOT_URLCONF = 'django_ecommerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'template')], #Adicionando a pasta "template como diretório"
+        'DIRS': [
+            os.path.join(BASE_DIR, 'template'), #Adicionando diretório global de templates
+            os.path.join(BASE_DIR, 'accounts', 'templates'),  # Diretório de templates do app accounts
+            ], 
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -127,3 +131,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#REDIRECT LOGIN AND LOGOUT
+
+LOGOUT_REDIRECT_URL = 'home'  # Redireciona para a página inicial após o logout
