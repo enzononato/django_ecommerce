@@ -6,7 +6,13 @@
     <title>{{title}}</title>
 </head>
 <body>
-    {% if user.is_authenticated %}
+    {% if user.is_superuser %}
+        <a href="admin/">Administration painel</a>
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    {% elif user.is_authenticated %}
         <p>Welcome, {{ user.username }}, {{user.email}}!</p>
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
