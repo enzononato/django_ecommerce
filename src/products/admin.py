@@ -7,7 +7,7 @@ from django.contrib import messages
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'image_tag', 'created_by')
-    readonly_fields = ('created_by',)  # torna o campo 'created_by' somente leitura, evitando alteração por parte do usuário
+    readonly_fields = ('created_by', 'slug',)  # torna o campo 'created_by' somente leitura, evitando alteração por parte do usuário
     
     def get_queryset(self, request):
         qs = super().get_queryset(request)
