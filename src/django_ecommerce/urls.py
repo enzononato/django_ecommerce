@@ -29,6 +29,7 @@ urlpatterns = [
         path('register/', register, name='register'),
         path('login/', login_view, name='login'),
         path('', include('django.contrib.auth.urls')),  # Inclui URLs de autenticação padrão do Django
+        path('products/', include('products.urls')), # Inclui urls do app products
 ]
 
 if settings.DEBUG:

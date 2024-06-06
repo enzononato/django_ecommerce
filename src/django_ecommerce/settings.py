@@ -60,6 +60,7 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, 'template'), #Adicionando diretório global de templates
             os.path.join(BASE_DIR, 'accounts', 'templates'),  # Diretório de templates do app accounts
+            os.path.join(BASE_DIR, 'products', 'templates'),  # Diretório de templates do app products
             ], 
         'APP_DIRS': True,
         'OPTIONS': {
